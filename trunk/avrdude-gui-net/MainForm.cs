@@ -37,11 +37,11 @@ namespace avrdudegui
 
                 if (s.ToLower().Contains("if="))
                 {
-                    pot = s.Replace("-", "").Replace("if=", ""); ;
+                    pot = s.ToLower().Replace("-", "").Replace("if=", ""); ;
                 }
-                if (s.Contains("dpart="))
+                if (s.ToLower().Contains("dpart="))
                 {
-                    mic = s.Replace("-", "").Replace("dpart=", "");
+                    mic = s.ToLower().Replace("-", "").Replace("dpart=", "");
                 }
 
             }
