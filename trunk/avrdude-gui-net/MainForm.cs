@@ -8,6 +8,7 @@
  */
 
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -23,9 +24,9 @@ namespace avrdudegui
     {
         public static string pot = "";
         public static string mic = "";
-        public static string Mikrokrmilnik_privzeti = "";
-        public static string Programator_privzet = "";
-        public static string avrdude = Environment.CurrentDirectory;
+        public static string Mikrokrmilnik_privzeti = null;
+        public static string Programator_privzet = null;
+        public static string avrdude = null;
         public string error = null;
         public string standard = null;
         [STAThread]
@@ -34,16 +35,18 @@ namespace avrdudegui
             foreach (string s in args)
             {
 
-                if (s.Contains("if="))
+                if (s.ToLower().Contains("if="))
                 {
-                    pot = s;
+                    pot = s.Replace("-", "").Replace("if=", ""); ;
                 }
                 if (s.Contains("dpart="))
                 {
-                    mic = s;
+                    mic = s.Replace("-", "").Replace("dpart=", "");
                 }
 
             }
+            if(File.Exists(Environment.CurrentDirectory+"//avrdude.exe")) avrdude=Environment.CurrentDirectory+"//avrdude.exe";
+            else avrdude="avrdude";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
@@ -62,14 +65,12 @@ namespace avrdudegui
             if (mic.Length > 0)
             {
                 povezava_gumb.Enabled = false;
-                mic = mic.Remove(0, 7);
                 textBox3.Clear();
                 textBox3.AppendText("Mikrokontroler: " + mic + Environment.NewLine);
 
             }
             if (pot.Length > 0)
             {
-                pot = pot.Remove(0, 3);
                 zapiši_hex.Enabled = true;
                 textBox3.AppendText("Pot: " + pot + Environment.NewLine);
             }
@@ -137,7 +138,7 @@ namespace avrdudegui
             Process run = new System.Diagnostics.Process();
             try
             {
-                run.StartInfo.FileName = "avrdude";
+                run.StartInfo.FileName = avrdude;
                 run.StartInfo.Arguments = vukaz;
                 run.StartInfo.UseShellExecute = false;
                 run.StartInfo.CreateNoWindow = true;
