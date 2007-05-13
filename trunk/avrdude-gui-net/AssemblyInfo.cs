@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 // you compile.
 
 [assembly: AssemblyTitle("AVRdude GUI")]
-[assembly: AssemblyDescription("Grafièni vmesnik za program avrdude. Veè informacij najdete na strani http://code.google.com/p/avrdude-gui-net/ ")]
+[assembly: AssemblyDescription("Ta program je grafièni vmesnik za program AVRDUDE, ki je program za programiranje mikrokrmilnikov podjetja ATMEL. \r\nVeè informacij najdete na strani http://code.google.com/p/avrdude-gui-net/")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Janez Troha")]
 [assembly: AssemblyProduct("AVRdude GUI")]
@@ -28,4 +28,4 @@ using System.Runtime.InteropServices;
 // You can specify all values by your own or you can build default build and revision
 // numbers with the '*' character (the default):
 
-[assembly: AssemblyVersion("0.11.0.*")]
+[assembly: AssemblyVersion("0.20.0.*")]

@@ -60,11 +60,11 @@
       <DependentUpon>nastavitve.cs</DependentUpon>
     </Compile>
     <Compile Include="SettingsXpress.cs" />
-    <Compile Include="vizitka.cs">
+    <Compile Include="Vizitka.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vizitka.designer.cs">
-      <DependentUpon>vizitka.cs</DependentUpon>
+    <Compile Include="Vizitka.Designer.cs">
+      <DependentUpon>Vizitka.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -74,9 +74,9 @@
       <DependentUpon>nastavitve.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="vizitka.resx">
-      <DependentUpon>vizitka.cs</DependentUpon>
+    <EmbeddedResource Include="Vizitka.resx">
       <SubType>Designer</SubType>
+      <DependentUpon>Vizitka.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

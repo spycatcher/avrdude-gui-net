@@ -132,9 +132,6 @@ namespace avrdudegui
             this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox3.Size = new System.Drawing.Size(262, 92);
             this.textBox3.TabIndex = 7;
-            this.textBox3.Text = "Ta program je namenjen programiranju, mikrokrmilnikov podjetja AMTMEL.\r\nZa njegov" +
-                "o uporabo morate najprej izbrati mikrokrmilnik, kar storite če kliknete na gumb " +
-                "Nastavitve.\r\nAvtor Janez Troha!";
             // 
             // label1
             // 

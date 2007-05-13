@@ -26,6 +26,7 @@ namespace avrdudegui
         public static string mic = "";
         public static string Mikrokrmilnik_privzeti = null;
         public static string Programator_privzet = null;
+        public static string Programtorji_opisi = null;
         public static string avrdude = null;
         public string error = null;
         public string standard = null;
@@ -107,8 +108,7 @@ namespace avrdudegui
             {
                 if (mic.Length > 0)
                 {
-                    Console.WriteLine(izhod);
-                    Application.Exit();
+                    Console.WriteLine(standard);
                 }
                 else
                 {
@@ -127,8 +127,14 @@ namespace avrdudegui
             else
                 if (mic.Length > 0)
                 {
-                    Console.WriteLine(izhod);
-                    Application.Exit();
+                    DialogResult result;
+                    result = MessageBox.Show("Ali zaprem Avrdude GUI aplikacijo?", "", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Console.WriteLine(izhod);
+                        Application.Exit();
+                    }
+                    
                 }
 
         }
@@ -246,7 +252,12 @@ namespace avrdudegui
         private void zapiši_varovalke_Click(object sender, EventArgs e)
         {
             string[] cip = Mikrokrmilnik_privzeti.Split(' ');
-            string izhod = zagon(@"-c " + Programator_privzet + " -p " + cip[0] + " -s -q -e -u -U hfuse:w:0x" + hfuse_vrstica.Text + ":m -U lfuse:w:0x" + lfuse_vrstica.Text + ":m");
+            DialogResult result;
+            result = MessageBox.Show("Ali ste prepričani da želite zapisati varovalke?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                zagon(@"-c " + Programator_privzet + " -p " + cip[0] + " -s -q -e -u -U hfuse:w:0x" + hfuse_vrstica.Text + ":m -U lfuse:w:0x" + lfuse_vrstica.Text + ":m");
+            }
         }
 
         private void NASTAVITVE_gumb_Click(object sender, EventArgs e)
@@ -257,7 +268,7 @@ namespace avrdudegui
 
         private void VIZITKA_gumb_Click(object sender, EventArgs e)
         {
-            vizitka sp = new vizitka();
+            Vizitka sp = new Vizitka();
             sp.ShowDialog();
         }
     }
