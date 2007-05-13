@@ -1,41 +1,31 @@
-/*
- * Created by SharpDevelop.
- * User: Janez
- * Date: 21.8.2006
- * Time: 23:39
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Reflection;
+
 namespace avrdudegui
 {
-	/// <summary>
-	/// Description of vizitka.
-	/// </summary>
-	public partial class vizitka
-	{
-		public vizitka()
-		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
-			InitializeComponent();
-			this.ime.Text += AssemblyProduct;
-            this.verzija.Text += AssemblyVersion;
-            this.licenca.Text += AssemblyCopyright;
-            this.avtor.Text += AssemblyCompany;
-            this.textBoxDescription.Text += AssemblyDescription;
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
-		}
-	        #region Assembly Attibute Accessors
+    partial class Vizitka : Form
+    {
+        public Vizitka()
+        {
+            InitializeComponent();
+
+            //  Initialize the AboutBox to display the product information from the assembly information.
+            //  Change assembly information settings for your application through either:
+            //  - Project->Properties->Application->Assembly Information
+            //  - AssemblyInfo.cs
+            this.Text = String.Format("About {0}", AssemblyTitle);
+            this.labelProductName.Text = AssemblyProduct;
+            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            this.labelCopyright.Text = AssemblyCopyright;
+            this.labelCompanyName.Text = AssemblyCompany;
+            this.textBoxDescription.Text = AssemblyDescription;
+        }
+
+        #region Assembly Attribute Accessors
 
         public string AssemblyTitle
         {
@@ -120,10 +110,6 @@ namespace avrdudegui
                 return ((AssemblyCompanyAttribute)attributes[0]).Company;
             }
         }
-        #endregion	
-		void zapri(object sender, System.EventArgs e)
-		{
-			Close();
-		}
-	}
+        #endregion
+    }
 }
