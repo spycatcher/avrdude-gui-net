@@ -75,7 +75,7 @@ namespace avrdudegui.Nastavitve
             Process run = new System.Diagnostics.Process();
             try
             {
-                run.StartInfo.FileName = avrdudegui.MainForm.avrdude + "\\avrdude.exe";
+                run.StartInfo.FileName = "avrdude";
                 run.StartInfo.Arguments = vukaz;
                 run.StartInfo.UseShellExecute = false;
                 run.StartInfo.CreateNoWindow = true;
