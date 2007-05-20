@@ -86,4 +86,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Program Files\NSIS\makensis.exe" "$(ProjectDir)setup\setup.nsi"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
