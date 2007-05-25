@@ -12,6 +12,7 @@ namespace avrdudegui.Nastavitve
     public partial class nastavitve : Form
     {
         string Mikrokrmilnik_privzeti = null;
+        string Port_privzet = null;
         string Programator_privzet = null;
         string standard = null;
         string error = null;
@@ -30,23 +31,41 @@ namespace avrdudegui.Nastavitve
             shraninastavitve();
             avrdudegui.MainForm.Mikrokrmilnik_privzeti = Mikrokrmilnik_privzeti;
             avrdudegui.MainForm.Programator_privzet = Programator_privzet;
-      
+            avrdudegui.MainForm.Port_privzet = Port_privzet;
         }
 
         void odprinastavitve()
         {
-            SettingsFile.Create(Application.LocalUserAppDataPath + @"\nastavitve.xml");
-            SettingsKey settings = SettingsFile.Settings["Program"];
-            this.Mikrokrmilnik_privzeti = settings.GetSetting("Mikrokontroler", "m8 ATMEGA8");
-            this.Programator_privzet = settings.GetSetting("Programator", "usbasp");
+            try
+            {
+                SettingsFile.Create(@"\nastavitve.xml");
+                SettingsKey settings = SettingsFile.Settings["Program"];
+                this.Mikrokrmilnik_privzeti = settings.GetSetting("Mikrokontroler", "m8 ATMEGA8");
+                this.Programator_privzet = settings.GetSetting("Programator", "usbasp");
+                this.Port_privzet = settings.GetSetting("Port", "USB");
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
 
         void shraninastavitve()
         {
-            SettingsKey settings = SettingsFile.Settings["Program"];
-            settings.StoreSetting("Mikrokontroler", this.Mikrokrmilnik_privzeti);
-            settings.StoreSetting("Programator", this.Programator_privzet);
-            SettingsFile.Update();
+            try
+            {
+                SettingsKey settings = SettingsFile.Settings["Program"];
+                settings.StoreSetting("Mikrokontroler", this.Mikrokrmilnik_privzeti);
+                settings.StoreSetting("Programator", this.Programator_privzet);
+                settings.StoreSetting("Port", this.Port_privzet);
+                SettingsFile.Update();
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
         void parsenastavitve()
         {
@@ -72,6 +91,7 @@ namespace avrdudegui.Nastavitve
             micsel.Sorted = true;
             micsel.Refresh();
             micsel.SelectedIndex = micsel.Items.IndexOf(Mikrokrmilnik_privzeti);
+            Port.Text = Port_privzet;
         }
         public string zagon(string vukaz)
         {
@@ -99,7 +119,6 @@ namespace avrdudegui.Nastavitve
                 return e.Message.ToString();
             }
         }
-
     }
 
 }

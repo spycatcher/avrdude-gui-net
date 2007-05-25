@@ -7,7 +7,7 @@ SetCompressor lzma
 
 # Defines
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.20
+!define VERSION 0.21
 !define COMPANY "JANEZ Troha"
 !define URL http://cupacup.wordpess.com
 
