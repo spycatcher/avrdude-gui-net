@@ -1266,7 +1266,7 @@ namespace Nastavitve
 			{
 				try
 				{
-					returnValue = XmlConvert.ToDateTime(str);
+                    returnValue = XmlConvert.ToDateTime(str, XmlDateTimeSerializationMode.Local);
 				}
 				catch
 				{
@@ -2163,7 +2163,7 @@ namespace Nastavitve
 		/// </remarks>
 		public void StoreSetting(string settingName, DateTime settingValue)
 		{
-			string str = XmlConvert.ToString(settingValue);
+			string str = settingValue.ToString();
 			StoreSetting(settingName,str);
 		}
 
