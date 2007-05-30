@@ -29,9 +29,9 @@ namespace avrdudegui.Nastavitve
             Mikrokrmilnik_privzeti = micsel.Items[micsel.SelectedIndex].ToString();
             Programator_privzet = progsel.Items[progsel.SelectedIndex].ToString();
             shraninastavitve();
-            avrdudegui.MainForm.Mikrokrmilnik_privzeti = Mikrokrmilnik_privzeti;
-            avrdudegui.MainForm.Programator_privzet = Programator_privzet;
-            avrdudegui.MainForm.Port_privzet = Port_privzet;
+            avrdudegui.GUI.Mikrokrmilnik_privzeti = Mikrokrmilnik_privzeti;
+            avrdudegui.GUI.Programator_privzet = Programator_privzet;
+            avrdudegui.GUI.Port_privzet = Port_privzet;
         }
 
         void odprinastavitve()
@@ -99,7 +99,7 @@ namespace avrdudegui.Nastavitve
             try
             {
                 
-                run.StartInfo.FileName = avrdudegui.MainForm.avrdude;
+                run.StartInfo.FileName = avrdudegui.GUI.avrdude;
                 run.StartInfo.Arguments = vukaz;
                 run.StartInfo.UseShellExecute = false;
                 run.StartInfo.CreateNoWindow = true;
