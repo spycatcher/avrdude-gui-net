@@ -20,7 +20,7 @@ namespace avrdudegui
     /// <summary>
     /// Description of MainForm.
     /// </summary>
-    public partial class MainForm
+    public partial class GUI
     {
         public static string pot = "";
         public static string mic = "";
@@ -51,10 +51,10 @@ namespace avrdudegui
             else avrdude = "avrdude";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new GUI());
         }
 
-        public MainForm()
+        public GUI()
         {
             //
             // The InitializeComponent() call is required for Windows Forms designer support.
@@ -70,23 +70,23 @@ namespace avrdudegui
             }
             catch (Exception)
             {
-                
+
                 throw;
             }
             if (mic.Length > 0)
             {
-                povezava_gumb.Enabled = false;
+                //povezava_gumb.Enabled = false;
                 textBox3.Clear();
                 textBox3.AppendText("Mikrokontroler: " + mic + Environment.NewLine);
 
             }
             if (pot.Length > 0)
             {
-                zapiši_hex.Enabled = true;
+                //zapiši_hex.Enabled = true;
                 textBox3.AppendText("Pot: " + pot + Environment.NewLine);
             }
-            else
-                zapiši_hex.Enabled = false;
+            //else
+                //zapiši_hex.Enabled = false;
 
 
         }
@@ -100,7 +100,7 @@ namespace avrdudegui
                 if (izbira.OpenFile() != null)
                 {
                     pot = izbira.FileName;
-                    zapiši_hex.Enabled = true;
+                    //zapiši_hex.Enabled = true;
 
                 }
             }
@@ -122,16 +122,16 @@ namespace avrdudegui
                 }
                 else
                 {
-                    povezava_gumb.Text = "Poveži";
-                    NASTAVITVE_gumb.Enabled = true;
-                    lfuse_vrstica.Enabled = false;
-                    hfuse_vrstica.Enabled = false;
-                    efuse_vrstica.Enabled = false;
-                    lockb_vrstica.Enabled = false;
-                    izberi_hex.Enabled = false;
-                    zapiši_varovalke.Enabled = false;
-                    preberi_varovalke.Enabled = false;
-                    zapiši_hex.Enabled = false;
+                    //povezava_gumb.Text = "Poveži";
+                    //NASTAVITVE_gumb.Enabled = true;
+                    ////lfuse_vrstica.Enabled = false;
+                    ////hfuse_vrstica.Enabled = false;
+                    ////efuse_vrstica.Enabled = false;
+                    ////lockb_vrstica.Enabled = false;
+                    //izberi_hex.Enabled = false;
+                    ////zapiši_varovalke.Enabled = false;
+                    ////preberi_varovalke.Enabled = false;
+                    //zapiši_hex.Enabled = false;
                 }
             }
             else
@@ -154,6 +154,7 @@ namespace avrdudegui
             Process run = new System.Diagnostics.Process();
             try
             {
+
                 run.StartInfo.FileName = avrdude;
                 run.StartInfo.Arguments = vukaz;
                 run.StartInfo.UseShellExecute = false;
@@ -171,17 +172,17 @@ namespace avrdudegui
                 textBox3.AppendText(error.Replace("avrdude.exe", "").Replace(", or use -F to override this check", "").Replace(":", ""));
                 if (error.Contains("AVR device initialized and ready to accept instructions") & error.Contains("error programm enable"))
                 {
-                    povezava_gumb.Text = "Poveži";
-                    NASTAVITVE_gumb.Enabled = true;
-                    lfuse_vrstica.Enabled = false;
-                    hfuse_vrstica.Enabled = false;
-                    efuse_vrstica.Enabled = false;
-                    lockb_vrstica.Enabled = false;
-                    izberi_hex.Enabled = false;
-                    zapiši_varovalke.Enabled = false;
-                    preberi_varovalke.Enabled = false;
-                    zapiši_hex.Enabled = false;
-                    povezava_do_kalkulatorja.Enabled = false;
+                    //povezava_gumb.Text = "Poveži";
+                    //NASTAVITVE_gumb.Enabled = true;
+                    ////lfuse_vrstica.Enabled = false;
+                    ////hfuse_vrstica.Enabled = false;
+                    ////efuse_vrstica.Enabled = false;
+                    ////lockb_vrstica.Enabled = false;
+                    //izberi_hex.Enabled = false;
+                    ////zapiši_varovalke.Enabled = false;
+                    ////preberi_varovalke.Enabled = false;
+                    //zapiši_hex.Enabled = false;
+                    ////povezava_do_kalkulatorja.Enabled = false;
                 }
                 return error.Replace("avrdude.exe", "").Replace(":", "");
             }
@@ -195,96 +196,46 @@ namespace avrdudegui
 
         void povezava_gumb_Click(object sender, System.EventArgs e)
         {
-            if (!povezava_gumb.Text.Contains("Prekini"))
-            {
+            //if (!povezava_gumb.Text.Contains("Prekini"))
+            //{
                 string[] cip = Mikrokrmilnik_privzeti.Split(' ');
                 string izhod = zagon(@"-c " + Programator_privzet + " -p " + cip[0] + " -P " + Port_privzet + " -s -q");
-                if (izhod.Contains("AVR device initialized and ready to accept instructions") & !izhod.Contains("Double check chip") & !izhod.Contains("Yikes!"))
-                {
-                    //lfuse_vrstica.Enabled = true;
-                    //hfuse_vrstica.Enabled = true;
-                    //efuse_vrstica.Enabled = true;
-                    //lockb_vrstica.Enabled = true;
-                    izberi_hex.Enabled = true;
-                    //zapiši_varovalke.Enabled = true;
-                    preberi_varovalke.Enabled = true;
-                    //povezava_do_kalkulatorja.Enabled = true;
-                    NASTAVITVE_gumb.Enabled = false;
-                    povezava_gumb.Text = "Prekini";
-                }
-            }
-            else
-            {
-                povezava_gumb.Text = "Poveži";
-                NASTAVITVE_gumb.Enabled = true;
-                lfuse_vrstica.Enabled = false;
-                hfuse_vrstica.Enabled = false;
-                efuse_vrstica.Enabled = false;
-                lockb_vrstica.Enabled = false;
-                lfuse_vrstica.Clear();
-                hfuse_vrstica.Clear();
-                efuse_vrstica.Clear();
-                lockb_vrstica.Clear();
-                izberi_hex.Enabled = false;
-                zapiši_varovalke.Enabled = false;
-                preberi_varovalke.Enabled = false;
-                zapiši_hex.Enabled = false;
-                povezava_do_kalkulatorja.Enabled = false;
-            }
+            //    if (izhod.Contains("AVR device initialized and ready to accept instructions") & !izhod.Contains("Double check chip") & !izhod.Contains("Yikes!"))
+            //    {
+            //        //lfuse_vrstica.Enabled = true;
+            //        //hfuse_vrstica.Enabled = true;
+            //        //efuse_vrstica.Enabled = true;
+            //        //lockb_vrstica.Enabled = true;
+            //        izberi_hex.Enabled = true;
+            //        //zapiši_varovalke.Enabled = true;
+            //        //preberi_varovalke.Enabled = true;
+            //        //povezava_do_kalkulatorja.Enabled = true;
+            //        NASTAVITVE_gumb.Enabled = false;
+            //        povezava_gumb.Text = "Prekini";
+            //    }
+            //}
+            //else
+            //{
+            //    povezava_gumb.Text = "Poveži";
+            //    NASTAVITVE_gumb.Enabled = true;
+            //    //lfuse_vrstica.Enabled = false;
+            //    //hfuse_vrstica.Enabled = false;
+            //    //efuse_vrstica.Enabled = false;
+            //    //lockb_vrstica.Enabled = false;
+            //    //lfuse_vrstica.Clear();
+            //    //hfuse_vrstica.Clear();
+            //    //efuse_vrstica.Clear();
+            //    //lockb_vrstica.Clear();
+            //    izberi_hex.Enabled = false;
+            //    //zapiši_varovalke.Enabled = false;
+            //    //preberi_varovalke.Enabled = false;
+            //    zapiši_hex.Enabled = false;
+            //    //povezava_do_kalkulatorja.Enabled = false;
+            //}
 
         }
 
-        void preberi_varovalke_Click(object sender, System.EventArgs e)
-        {
-            string[] cip = Mikrokrmilnik_privzeti.Split(' ');
-            spletna_stran_ukazi = null;
-            string izhod = zagon(@"-c " + Programator_privzet + " -p " + cip[0] + " -P " + Port_privzet + " -q -U lock:r:lock:h -U lfuse:r:lfuse:h -U hfuse:r:hfuse:h -U efuse:r:efuse:h");
 
-            if (File.Exists("lfuse"))
-            {
-                lfuse_vrstica.Enabled = true;
-                lfuse_vrstica.Text = File.OpenText("lfuse").ReadLine().Remove(0, 2).ToUpper();
-                spletna_stran_ukazi += "&V_LOW=" + lfuse_vrstica.Text;
-            }
-            if (File.Exists("hfuse"))
-            {
-                hfuse_vrstica.Enabled = true;
-                hfuse_vrstica.Text = File.OpenText("hfuse").ReadLine().Remove(0, 2).ToUpper();
-                spletna_stran_ukazi += "&V_HIGH=" + hfuse_vrstica.Text;
-            }
-            if (File.Exists("lock"))
-            {
-                lockb_vrstica.Enabled = true;
-                lockb_vrstica.Text = File.OpenText("lock").ReadLine().Remove(0, 2).ToUpper();
-            }
-            if (File.Exists("efuse"))
-            {
-                efuse_vrstica.Enabled = true;
-                efuse_vrstica.Text = File.OpenText("lock").ReadLine().Remove(0, 2).ToUpper();
-            }
-            zapiši_varovalke.Enabled = true;
-            povezava_do_kalkulatorja.Enabled = true;
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            string cip = Mikrokrmilnik_privzeti.Split(' ')[1].ToLower().Remove(0, 2); ;
-            cip = "AT" + cip;
-            string naslov = "http://palmavr.sourceforge.net/cgi-bin/fc.cgi?P_PREV=" + cip + "&P=" + cip + spletna_stran_ukazi + "&O_HEX=Apply+user+values";
-            textBox3.AppendText(Environment.NewLine + naslov);
-            System.Diagnostics.Process.Start(naslov);
-        }
-
-        private void zapiši_varovalke_Click(object sender, EventArgs e)
-        {
-            string[] cip = Mikrokrmilnik_privzeti.Split(' ');
-            DialogResult result;
-            result = MessageBox.Show("Ali ste prepričani da želite zapisati varovalke?", "", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                zagon(@"-c " + Programator_privzet + " -p " + cip[0] + " -P " + Port_privzet + " -s -q -e -u -U hfuse:w:0x" + hfuse_vrstica.Text + ":m -U lfuse:w:0x" + lfuse_vrstica.Text + ":m");
-            }
-        }
 
         private void NASTAVITVE_gumb_Click(object sender, EventArgs e)
         {
@@ -316,6 +267,12 @@ namespace avrdudegui
         private void Izhod_klik(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void fusesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fuses sp = new fuses();
+            sp.ShowDialog();
         }
 
 
