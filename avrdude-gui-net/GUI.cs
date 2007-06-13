@@ -275,6 +275,12 @@ namespace avrdudegui
             sp.ShowDialog();
         }
 
+        private void supportedProgrammersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            zagon(@"-c ");
+            
+        }
+
 
     }
 }

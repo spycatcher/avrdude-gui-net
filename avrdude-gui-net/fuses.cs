@@ -11,12 +11,7 @@ namespace avrdudegui
 {
     public partial class fuses : Form
     {
-        string Mikrokrmilnik_privzeti = null;
-        string Port_privzet = null;
-        string Programator_privzet = null;
-        string standard = null;
-        string error = null;
-        string spletna_stran_ukazi = null;
+
         public fuses()
         {
             InitializeComponent();
@@ -27,7 +22,7 @@ namespace avrdudegui
             string cip = avrdudegui.GUI.Mikrokrmilnik_privzeti.Split(' ')[1].ToLower().Remove(0, 2); ;
             cip = "AT" + cip;
             string naslov = "http://palmavr.sourceforge.net/cgi-bin/fc.cgi?P_PREV=" + cip + "&P=" + cip + spletna_stran_ukazi + "&O_HEX=Apply+user+values";
-            avrdudegui.GUI.textBox3.AppendText(Environment.NewLine + naslov);
+            textBox3.AppendText(Environment.NewLine + naslov);
             System.Diagnostics.Process.Start(naslov);
         }
 
@@ -74,48 +69,5 @@ namespace avrdudegui
             povezava_do_kalkulatorja.Enabled = true;
         }
 
-        public string zagon(string vukaz)
-        {
-            Process run = new System.Diagnostics.Process();
-            try
-            {
-
-                run.StartInfo.FileName = avrdudegui.GUI.avrdude;
-                run.StartInfo.Arguments = vukaz;
-                run.StartInfo.UseShellExecute = false;
-                run.StartInfo.CreateNoWindow = true;
-                run.StartInfo.RedirectStandardError = true;
-                run.StartInfo.RedirectStandardOutput = true;
-                run.Start();
-                error = run.StandardError.ReadToEnd();
-                standard = run.StandardOutput.ReadToEnd();
-                run.WaitForExit();
-                run.Close();
-                avrdudegui.GUI.textBox3.Clear();
-                avrdudegui.GUI.textBox3.AppendText("Ukazni niz: avrdude " + vukaz + Environment.NewLine + Environment.NewLine);
-                avrdudegui.GUI.textBox3.AppendText(standard.Replace("avrdude.exe: safemode:", ""));
-                avrdudegui.GUI.textBox3.AppendText(error.Replace("avrdude.exe", "").Replace(", or use -F to override this check", "").Replace(":", ""));
-                if (error.Contains("AVR device initialized and ready to accept instructions") & error.Contains("error programm enable"))
-                {
-                    //povezava_gumb.Text = "Poveži";
-                    //NASTAVITVE_gumb.Enabled = true;
-                    ////lfuse_vrstica.Enabled = false;
-                    ////hfuse_vrstica.Enabled = false;
-                    ////efuse_vrstica.Enabled = false;
-                    ////lockb_vrstica.Enabled = false;
-                    //izberi_hex.Enabled = false;
-                    ////zapiši_varovalke.Enabled = false;
-                    ////preberi_varovalke.Enabled = false;
-                    //zapiši_hex.Enabled = false;
-                    ////povezava_do_kalkulatorja.Enabled = false;
-                }
-                return error.Replace("avrdude.exe", "").Replace(":", "");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-                return e.Message.ToString();
-            }
-        }
     }
 }
