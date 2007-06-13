@@ -164,6 +164,7 @@ namespace avrdudegui
             // 
             // fuses
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.Dialog;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(215, 112);
@@ -172,6 +173,7 @@ namespace avrdudegui
             this.Name = "fuses";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Varovalke";
             this.TopMost = true;
             this.groupBox1.ResumeLayout(false);

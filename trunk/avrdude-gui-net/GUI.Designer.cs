@@ -67,7 +67,9 @@ namespace avrdudegui
             this.status = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            avrdudegui.GUI.textBox3 = new System.Windows.Forms.TextBox();
+            this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supportedProgrammersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.suportedDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meni.SuspendLayout();
             this.status.SuspendLayout();
             this.SuspendLayout();
@@ -99,7 +101,7 @@ namespace avrdudegui
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openFileToolStripMenuItem
@@ -108,19 +110,19 @@ namespace avrdudegui
             this.flashToolStripMenuItem,
             this.epromToolStripMenuItem});
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.openFileToolStripMenuItem.Text = "Open file";
             // 
             // flashToolStripMenuItem
             // 
             this.flashToolStripMenuItem.Name = "flashToolStripMenuItem";
-            this.flashToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.flashToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.flashToolStripMenuItem.Text = "Flash";
             // 
             // epromToolStripMenuItem
             // 
             this.epromToolStripMenuItem.Name = "epromToolStripMenuItem";
-            this.epromToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.epromToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.epromToolStripMenuItem.Text = "Eprom";
             // 
             // saveFileToolStripMenuItem
@@ -129,30 +131,30 @@ namespace avrdudegui
             this.flashToolStripMenuItem1,
             this.epromToolStripMenuItem1});
             this.saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
-            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.saveFileToolStripMenuItem.Text = "Save file";
             // 
             // flashToolStripMenuItem1
             // 
             this.flashToolStripMenuItem1.Name = "flashToolStripMenuItem1";
-            this.flashToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.flashToolStripMenuItem1.Size = new System.Drawing.Size(115, 22);
             this.flashToolStripMenuItem1.Text = "Flash";
             // 
             // epromToolStripMenuItem1
             // 
             this.epromToolStripMenuItem1.Name = "epromToolStripMenuItem1";
-            this.epromToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.epromToolStripMenuItem1.Size = new System.Drawing.Size(115, 22);
             this.epromToolStripMenuItem1.Text = "Eprom";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(127, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(125, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.Izhod_klik);
             // 
@@ -170,65 +172,65 @@ namespace avrdudegui
             this.readAllToolStripMenuItem,
             this.writeAllToolStripMenuItem});
             this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
-            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.actionsToolStripMenuItem.Text = "Actions";
             // 
             // connectToolStripMenuItem
             // 
             this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
-            this.connectToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.connectToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.connectToolStripMenuItem.Text = "Connect";
             this.connectToolStripMenuItem.Click += new System.EventHandler(this.povezava_gumb_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(141, 6);
             // 
             // writeFlashToolStripMenuItem
             // 
             this.writeFlashToolStripMenuItem.Name = "writeFlashToolStripMenuItem";
-            this.writeFlashToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.writeFlashToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.writeFlashToolStripMenuItem.Text = "Write Flash";
             // 
             // writeEpromToolStripMenuItem
             // 
             this.writeEpromToolStripMenuItem.Name = "writeEpromToolStripMenuItem";
-            this.writeEpromToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.writeEpromToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.writeEpromToolStripMenuItem.Text = "Write Eprom";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(141, 6);
             // 
             // readFlashToolStripMenuItem
             // 
             this.readFlashToolStripMenuItem.Name = "readFlashToolStripMenuItem";
-            this.readFlashToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.readFlashToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.readFlashToolStripMenuItem.Text = "Read Flash";
             // 
             // readEpromToolStripMenuItem
             // 
             this.readEpromToolStripMenuItem.Name = "readEpromToolStripMenuItem";
-            this.readEpromToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.readEpromToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.readEpromToolStripMenuItem.Text = "Read Eprom";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(141, 6);
             // 
             // readAllToolStripMenuItem
             // 
             this.readAllToolStripMenuItem.Name = "readAllToolStripMenuItem";
-            this.readAllToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.readAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.readAllToolStripMenuItem.Text = "Read all";
             // 
             // writeAllToolStripMenuItem
             // 
             this.writeAllToolStripMenuItem.Name = "writeAllToolStripMenuItem";
-            this.writeAllToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.writeAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.writeAllToolStripMenuItem.Text = "Write all";
             // 
             // toolsToolStripMenuItem
@@ -237,35 +239,36 @@ namespace avrdudegui
             this.optionsToolStripMenuItem,
             this.fusesToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.optionsToolStripMenuItem.Text = "Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.NASTAVITVE_gumb_Click);
             // 
             // fusesToolStripMenuItem
             // 
             this.fusesToolStripMenuItem.Name = "fusesToolStripMenuItem";
-            this.fusesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fusesToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.fusesToolStripMenuItem.Text = "Fuses";
             this.fusesToolStripMenuItem.Click += new System.EventHandler(this.fusesToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.informationToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.VIZITKA_gumb_Click);
             // 
@@ -286,7 +289,7 @@ namespace avrdudegui
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(109, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // toolStripProgressBar1
@@ -296,18 +299,31 @@ namespace avrdudegui
             this.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.toolStripProgressBar1.Visible = false;
             // 
-            // textBox1
+            // informationToolStripMenuItem
             // 
-            avrdudegui.GUI.textBox3.Location = new System.Drawing.Point(12, 27);
-            avrdudegui.GUI.textBox3.Multiline = true;
-            avrdudegui.GUI.textBox3.Name = "textBox1";
-            avrdudegui.GUI.textBox3.Size = new System.Drawing.Size(378, 124);
-            avrdudegui.GUI.textBox3.TabIndex = 20;
+            this.informationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.supportedProgrammersToolStripMenuItem,
+            this.suportedDevicesToolStripMenuItem});
+            this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.informationToolStripMenuItem.Text = "Information";
+            // 
+            // supportedProgrammersToolStripMenuItem
+            // 
+            this.supportedProgrammersToolStripMenuItem.Name = "supportedProgrammersToolStripMenuItem";
+            this.supportedProgrammersToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.supportedProgrammersToolStripMenuItem.Text = "Supported programmers";
+            this.supportedProgrammersToolStripMenuItem.Click += new System.EventHandler(this.supportedProgrammersToolStripMenuItem_Click);
+            // 
+            // suportedDevicesToolStripMenuItem
+            // 
+            this.suportedDevicesToolStripMenuItem.Name = "suportedDevicesToolStripMenuItem";
+            this.suportedDevicesToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.suportedDevicesToolStripMenuItem.Text = "Suported devices";
             // 
             // GUI
             // 
             this.ClientSize = new System.Drawing.Size(402, 176);
-            this.Controls.Add(avrdudegui.GUI.textBox3);
             this.Controls.Add(this.status);
             this.Controls.Add(this.meni);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -356,6 +372,9 @@ namespace avrdudegui
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripMenuItem fusesToolStripMenuItem;
-        public static System.Windows.Forms.TextBox textBox3;
+        public  System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ToolStripMenuItem informationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supportedProgrammersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem suportedDevicesToolStripMenuItem;
 	}
 }
