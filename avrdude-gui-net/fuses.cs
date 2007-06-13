@@ -9,7 +9,7 @@ using Nastavitve;
 
 namespace avrdudegui
 {
-    public partial class fuses : Form
+    public partial class fuses
     {
 
         public fuses()

@@ -9,7 +9,7 @@ using System.Diagnostics;
 using Nastavitve;
 namespace avrdudegui.Nastavitve
 {
-    public partial class nastavitve : Form
+    public partial class nastavitve
     {
         string Mikrokrmilnik_privzeti = null;
         string Port_privzet = null;
