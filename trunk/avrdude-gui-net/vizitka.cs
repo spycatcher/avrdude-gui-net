@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace avrdudegui
 {
-    partial class Vizitka : Form
+    partial class Vizitka
     {
         public Vizitka()
         {
