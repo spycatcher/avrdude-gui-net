@@ -15,8 +15,8 @@
     </AssemblyOriginatorKeyFile>
     <ManifestCertificateThumbprint>958597D44E9B46DD4CB63C38AD517B50F7D2BD90</ManifestCertificateThumbprint>
     <ManifestKeyFile>avrdudegui_TemporaryKey.pfx</ManifestKeyFile>
-    <GenerateManifests>true</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -34,13 +34,14 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>obj\Debug\</IntermediateOutputPath>
     <OutputPath>bin\Debug\</OutputPath>
     <Optimize>False</Optimize>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DefineConstants>DEBUG</DefineConstants>
     <DebugSymbols>True</DebugSymbols>
     <DebugType>Full</DebugType>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
@@ -54,13 +55,14 @@
     <IntermediateOutputPath>obj\Release\</IntermediateOutputPath>
     <OutputPath>bin\Release\</OutputPath>
     <Optimize>True</Optimize>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <DebugSymbols>False</DebugSymbols>
     <DebugType>None</DebugType>
     <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
     <DocumentationFile>
     </DocumentationFile>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
@@ -72,53 +74,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fuses.cs">
+    <Compile Include="Varovalke.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fuses.Designer.cs">
-      <DependentUpon>fuses.cs</DependentUpon>
+    <Compile Include="Varovalke.Designer.cs">
+      <DependentUpon>Varovalke.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI.cs">
+    <Compile Include="Program.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI.Designer.cs">
-      <DependentUpon>GUI.cs</DependentUpon>
+    <Compile Include="Program.Designer.cs">
+      <DependentUpon>Program.cs</DependentUpon>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="nastavitve.cs">
+    <Compile Include="Nastavitve.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nastavitve.designer.cs">
-      <DependentUpon>nastavitve.cs</DependentUpon>
+    <Compile Include="Nastavitve.designer.cs">
+      <DependentUpon>Nastavitve.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsXpress.cs" />
+    <Compile Include="Dodatki\Orodja.cs" />
+    <Compile Include="Dodatki\SettingsXpress.cs" />
     <Compile Include="Vizitka.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vizitka.Designer.cs">
       <DependentUpon>Vizitka.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="fuses.resx">
+    <EmbeddedResource Include="Varovalke.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>fuses.cs</DependentUpon>
+      <DependentUpon>Varovalke.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI.resx">
-      <DependentUpon>GUI.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="nastavitve.resx">
-      <DependentUpon>nastavitve.cs</DependentUpon>
+    <EmbeddedResource Include="Program.resx">
+      <DependentUpon>Program.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
+    <EmbeddedResource Include="Nastavitve.resx">
+      <DependentUpon>Nastavitve.cs</DependentUpon>
       <SubType>Designer</SubType>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Vizitka.resx">
       <SubType>Designer</SubType>
@@ -139,6 +132,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <PropertyGroup>
