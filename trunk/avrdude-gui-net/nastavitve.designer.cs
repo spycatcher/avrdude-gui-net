@@ -1,6 +1,6 @@
-namespace avrdudegui.Nastavitve
+namespace avrdudegui
 {
-    partial class nastavitve
+    partial class Nastavitve : System.Windows.Forms.Form
     {
         /// <summary>
         /// Required designer variable.

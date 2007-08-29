@@ -1,6 +1,6 @@
 namespace avrdudegui
 {
-    partial class Vizitka
+    partial class Vizitka : System.Windows.Forms.Form
     {
         /// <summary>
         /// Required designer variable.
