@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Janez Troha")]
 [assembly: AssemblyProduct("AVRdude GUI")]
-[assembly: AssemblyCopyright("CC GNU")]
+[assembly: AssemblyCopyright("Freeware")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -28,4 +28,4 @@ using System.Runtime.InteropServices;
 // You can specify all values by your own or you can build default build and revision
 // numbers with the '*' character (the default):
 
-[assembly: AssemblyVersion("0.21.0.*")]
+[assembly: AssemblyVersion("0.30.5.*")]

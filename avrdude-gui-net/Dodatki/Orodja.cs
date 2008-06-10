@@ -4,6 +4,7 @@ using System.Text;
 using Nastavitve;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace avrdudegui.Orodja
 {
@@ -32,11 +33,13 @@ namespace avrdudegui.Orodja
         {
             get
             {
+                Odpri();
                 return Mikrokontroler_n;
             }
             set
             {
                 Mikrokontroler_n = value;
+                Shrani();
             }
         }
 
@@ -44,11 +47,13 @@ namespace avrdudegui.Orodja
         {
             get
             {
+                Odpri();
                 return Port_n;
             }
             set
             {
                 Port_n = value;
+                Shrani();
             }
         }
 
@@ -56,11 +61,13 @@ namespace avrdudegui.Orodja
         {
             get
             {
+                Odpri();
                 return Programator_n;
             }
             set
             {
                 Programator_n = value;
+                Shrani();
             }
         }
 
@@ -92,7 +99,7 @@ namespace avrdudegui.Orodja
         {
             SettingsFile.Create(Application.StartupPath + @"\nastavitve.xml");
             SettingsKey settings = SettingsFile.Settings["Program"];
-            Mikrokontroler_n = settings.GetSetting("Mikrokontroler", "m8");
+            Mikrokontroler_n = settings.GetSetting("Mikrokontroler", "m8 ATMEGA8");
             Programator_n = settings.GetSetting("Programator", "usbasp");
             Port_n = settings.GetSetting("Port", "USB");
         }
@@ -112,6 +119,7 @@ namespace avrdudegui.Orodja
 
         internal static string Zagon(string vukaz)
         {
+            Console.WriteLine(vukaz);
             Process run = new System.Diagnostics.Process();
             try
             {
@@ -126,7 +134,7 @@ namespace avrdudegui.Orodja
                 standard = run.StandardOutput.ReadToEnd();
                 run.WaitForExit();
                 run.Close();
-                //textBox3.AppendText("Ukazni niz: avrdude " + vukaz + Environment.NewLine + Environment.NewLine);
+                //.AppendText("Ukazni niz: avrdude " + vukaz + Environment.NewLine + Environment.NewLine);
                 //textBox3.AppendText(standard.Replace("avrdude.exe: safemode:", ""));
                 //textBox3.AppendText(error.Replace("avrdude.exe", "").Replace(", or use -F to override this check", "").Replace(":", ""));
                 if (error.Contains("AVR device initialized and ready to accept instructions") & error.Contains("error programm enable"))
@@ -138,6 +146,90 @@ namespace avrdudegui.Orodja
             {
                 Console.WriteLine(e.ToString());
                 return e.Message.ToString();
+            }
+        }
+
+        public static string AssemblyTitle
+        {
+            get
+            {
+                // Get all Title attributes on this assembly
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
+                // If there is at least one Title attribute
+                if (attributes.Length > 0)
+                {
+                    // Select the first one
+                    AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
+                    // If it is not an empty string, return it
+                    if (titleAttribute.Title != "")
+                        return titleAttribute.Title;
+                }
+                // If there was no Title attribute, or if the Title attribute was the empty string, return the .exe name
+                return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
+            }
+        }
+
+        public static string AssemblyVersion
+        {
+            get
+            {
+                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            }
+        }
+
+        public static string AssemblyDescription
+        {
+            get
+            {
+                // Get all Description attributes on this assembly
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
+                // If there aren't any Description attributes, return an empty string
+                if (attributes.Length == 0)
+                    return "";
+                // If there is a Description attribute, return its value
+                return ((AssemblyDescriptionAttribute)attributes[0]).Description;
+            }
+        }
+
+        public static string AssemblyProduct
+        {
+            get
+            {
+                // Get all Product attributes on this assembly
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
+                // If there aren't any Product attributes, return an empty string
+                if (attributes.Length == 0)
+                    return "";
+                // If there is a Product attribute, return its value
+                return ((AssemblyProductAttribute)attributes[0]).Product;
+            }
+        }
+
+        public static string AssemblyCopyright
+        {
+            get
+            {
+                // Get all Copyright attributes on this assembly
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
+                // If there aren't any Copyright attributes, return an empty string
+                if (attributes.Length == 0)
+                    return "";
+                // If there is a Copyright attribute, return its value
+                return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
+            }
+        }
+
+        public static string AssemblyCompany
+        {
+            get
+            {
+                // Get all Company attributes on this assembly
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
+                // If there aren't any Company attributes, return an empty string
+                if (attributes.Length == 0)
+                    return "";
+                // If there is a Company attribute, return its value
+                return ((AssemblyCompanyAttribute)attributes[0]).Company;
             }
         }
     }

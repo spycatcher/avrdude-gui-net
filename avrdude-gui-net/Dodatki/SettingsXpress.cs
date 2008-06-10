@@ -183,7 +183,7 @@ namespace Nastavitve
 
 		static SettingsFile()
 		{
-			string path = System.Windows.Forms.Application.UserAppDataPath;
+			string path = System.Windows.Forms.Application.StartupPath;
 			fileName = Path.Combine(path,RES_FileName);
 		}
 
@@ -305,7 +305,7 @@ namespace Nastavitve
 		/// </summary>
 		public static void Create()
 		{
-			string path = System.Windows.Forms.Application.UserAppDataPath;
+            string path = System.Windows.Forms.Application.StartupPath;
 			fileName = Path.Combine(path,RES_FileName);
 		}
 

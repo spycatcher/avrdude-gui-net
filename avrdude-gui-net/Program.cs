@@ -45,68 +45,37 @@ namespace avrdudegui
         public Program()
         {
             InitializeComponent();
+            parsenastavitve();
             if (Vrednosti.Datoteka_hex != null)
             {
                 Obvestila.AppendText("Pot: " + Vrednosti.Datoteka_hex + Environment.NewLine);
             }
+
         }
 
 
-        void izberi_hex_Click(object sender, System.EventArgs e)
+        void preberi_pomnilnik_Click(object sender, System.EventArgs e)
         {
-            if (izbira.ShowDialog() == DialogResult.OK)
+            if (shrani.ShowDialog() == DialogResult.OK)
             {
-                if (izbira.OpenFile() != null)
+                string[] cip = Vrednosti.Mikrokontroler.Split(' ');
+                string vrsta = null;
+                string vkljucim_port = " -P " + Vrednosti.Port;
+                if (!port_check.Checked) vkljucim_port = null;
+                switch (Path.GetExtension(shrani.FileName))
                 {
-                    Vrednosti.Datoteka_hex = izbira.FileName;
+                    case ".hex":
+                        vrsta = ":i";
+                        break;
+                    case ".rom":
+                        vrsta = ":s";
+                        break;
+                    case ".bin":
+                        vrsta = ":r";
+                        break;
                 }
+                Obvestila.AppendText(Pripomočki.Zagon(@"-c " + Vrednosti.Programator + " -p " + cip[0] + " -P " + vkljucim_port + " -q -U flash:r:" + Path.GetFileName(shrani.FileName) + vrsta));
             }
-        }
-
-
-        void zapiši_hex_Click(object sender, System.EventArgs e)
-        {
-            string[] cip = Vrednosti.Mikrokontroler.Split(' ');
-
-            string izhod = Pripomočki.Zagon(@"-c " + Vrednosti.Programator + " -p " + cip[0] + " -P " + Vrednosti.Port + " -s -q -e -U flash:w:" + "\"" + Vrednosti.Datoteka_hex + "\"" + ":a");
-            if (izhod.Contains("AVR device initialized and ready to accept instructions") & izhod.Contains("error programm enable"))
-            {
-                if (Vrednosti.Mikrokontroler.Length > 0)
-                {
-                    Console.WriteLine(standard);
-                }
-            }
-            else
-                if (Vrednosti.Mikrokontroler.Length > 0)
-                {
-                    DialogResult result;
-                    result = MessageBox.Show("Ali zaprem Avrdude GUI aplikacijo?", "", MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes)
-                    {
-                        Console.WriteLine(izhod);
-                        Application.Exit();
-                    }
-
-                }
-
-        }
-
-        void povezava_gumb_Click(object sender, System.EventArgs e)
-        {
-            string[] cip = Vrednosti.Mikrokontroler.Split(' ');
-            string izhod = Pripomočki.Zagon(@"-c " + Vrednosti.Programator + " -p " + cip[0] + " -P " + Vrednosti.Port + " -s -q");
-        }
-
-        private void NASTAVITVE_gumb_Click(object sender, EventArgs e)
-        {
-            Nastavitve sp = new Nastavitve();
-            sp.ShowDialog();
-        }
-
-        private void VIZITKA_gumb_Click(object sender, EventArgs e)
-        {
-            Vizitka sp = new Vizitka();
-            sp.ShowDialog();
         }
 
         private void ob_zagonu(object sender, EventArgs e)
@@ -124,29 +93,153 @@ namespace avrdudegui
                 File.Delete("efuse");
         }
 
-        private void Izhod_klik(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void fusesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Varovalke sp = new Varovalke();
-            sp.ShowDialog();
-        }
-
         private void supportedProgrammersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Obvestila.Clear();
-            Obvestila.AppendText(Pripomočki.Zagon(@"-c test"));
+            Vrednosti.Programator = progsel.SelectedItem.ToString();
+            Obvestila.AppendText("Izbran programator: " + Vrednosti.Programator + Environment.NewLine);
         }
 
         private void suportedDevicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Obvestila.Clear();
-            Obvestila.AppendText(Pripomočki.Zagon(@"-c "+Vrednosti.Programator+" -p AVRDUDEGUI"));
+            Vrednosti.Mikrokontroler = micsel.SelectedItem.ToString();
+            string[] cip = Vrednosti.Mikrokontroler.Split(' ');
+            Obvestila.AppendText("Izbran mikrokontroler: " + cip[1] + Environment.NewLine);
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string cip = Vrednosti.Mikrokontroler.Split(' ')[1].ToLower().Remove(0, 2);
+            cip = "AT" + cip;
+            string naslov = "http://palmavr.sourceforge.net/cgi-bin/fc.cgi?P_PREV=" + cip + "&P=" + cip + Vrednosti.Spletna_stran + "&O_HEX=Apply+user+values";
+            System.Diagnostics.Process.Start(naslov);
+        }
+
+        private void zapiši_varovalke_Click(object sender, EventArgs e)
+        {
+            string[] cip = Vrednosti.Mikrokontroler.Split(' ');
+            string vkljucim_port = " -P " + Vrednosti.Port;
+            if (!port_check.Checked) vkljucim_port = null;
+            DialogResult result;
+            result = MessageBox.Show("Ali ste prepričani da želite zapisati varovalke?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Obvestila.AppendText(Pripomočki.Zagon(@"-c " + Vrednosti.Programator + " -p " + cip[0] + vkljucim_port + " -s -q -e -u -U hfuse:w:0x" + hfuse_vrstica.Text + ":m -U lfuse:w:0x" + lfuse_vrstica.Text + ":m"));
+            }
+        }
+
+        void preberi_varovalke_Click(object sender, System.EventArgs e)
+        {
+            string[] cip = Vrednosti.Mikrokontroler.Split(' ');
+            string vkljucim_port = " -P " + Vrednosti.Port;
+            if (!port_check.Checked) vkljucim_port = null;
+            Vrednosti.Spletna_stran = null;
+            Obvestila.AppendText(Pripomočki.Zagon(@"-c " + Vrednosti.Programator + " -p " + cip[0] + vkljucim_port + " -q -U lock:r:lock:h -U lfuse:r:lfuse:h -U hfuse:r:hfuse:h -U efuse:r:efuse:h"));
+
+            if (File.Exists("lfuse"))
+            {
+                lfuse_vrstica.Enabled = true;
+                lfuse_vrstica.Text = File.OpenText("lfuse").ReadLine().Remove(0, 2).ToUpper();
+                Vrednosti.Spletna_stran += "&V_LOW=" + lfuse_vrstica.Text;
+            }
+            if (File.Exists("hfuse"))
+            {
+                hfuse_vrstica.Enabled = true;
+                hfuse_vrstica.Text = File.OpenText("hfuse").ReadLine().Remove(0, 2).ToUpper();
+                Vrednosti.Spletna_stran += "&V_HIGH=" + hfuse_vrstica.Text;
+            }
+            if (File.Exists("lock"))
+            {
+                lockb_vrstica.Enabled = true;
+                lockb_vrstica.Text = File.OpenText("lock").ReadLine().Remove(0, 2).ToUpper();
+            }
+            if (File.Exists("efuse"))
+            {
+                efuse_vrstica.Enabled = true;
+                efuse_vrstica.Text = File.OpenText("lock").ReadLine().Remove(0, 2).ToUpper();
+            }
+            zapiši_varovalke.Enabled = true;
+            povezava_do_kalkulatorja.Enabled = true;
+        }
+
+        void parsenastavitve()
+        {
+            try
+            {
+                micsel.Items.Clear();
+                progsel.Items.Clear();
+                string[] data = Pripomočki.Zagon("-c test").Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                foreach (string s in data)
+                {
+                    progsel.Items.Add(s.Replace(" ", "").Split('=')[0]);
+                }
+                progsel.Items.RemoveAt(0);
+                progsel.Items.RemoveAt(0);
+                progsel.Sorted = true;
+                progsel.Refresh();
+                progsel.SelectedIndex = progsel.Items.IndexOf(Vrednosti.Programator);
+                data = Pripomočki.Zagon("-c " + Vrednosti.Programator).Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                foreach (string s in data)
+                {
+                    micsel.Items.Add(s.Replace(" ", "").Replace("=", " ").Split('[')[0]);
+                }
+                micsel.Items.RemoveAt(0);
+                micsel.Items.RemoveAt(0);
+                micsel.Sorted = true;
+                micsel.Refresh();
+                micsel.SelectedIndex = micsel.Items.IndexOf(Vrednosti.Mikrokontroler);
+                Port.Text = Vrednosti.Port;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        private void spremembapoložaja(object sender, TabControlCancelEventArgs e)
+        {
+            if (e.TabPage.Text == "Nastavitve")
+            {
+                Vrednosti.Mikrokontroler = micsel.Items[micsel.SelectedIndex].ToString();
+                Vrednosti.Programator = progsel.Items[progsel.SelectedIndex].ToString();
+                Vrednosti.Port = Port.Text;
+            }
+            if (e.TabPage.Text == "Vizitka")
+            {
+                this.Text = String.Format("About {0}", Pripomočki.AssemblyTitle);
+                this.labelProductName.Text = Pripomočki.AssemblyProduct;
+                this.labelVersion.Text = String.Format("Version {0}", Pripomočki.AssemblyVersion);
+                this.labelCopyright.Text = Pripomočki.AssemblyCopyright;
+                this.labelCompanyName.Text = Pripomočki.AssemblyCompany;
+                this.textBoxDescription.Text = Pripomočki.AssemblyDescription;
+            }
+
+        }
+
+        private void izberi_datoteko_Click(object sender, EventArgs e)
+        {
+            if (izbira.ShowDialog() == DialogResult.OK)
+            {
+                if (izbira.OpenFile() != null)
+                {
+                    Vrednosti.Datoteka_hex = izbira.FileName;
+                    zap_gumb_flash.Enabled = true;
+                    Obvestila.AppendText(Vrednosti.Datoteka_hex);
+                }
+            }
+        }
+
+        private void zapiši_POMINLNIK_Click(object sender, EventArgs e)
+        {
+            string[] cip = Vrednosti.Mikrokontroler.Split(' ');
+            string vkljucim_port = " -P " + Vrednosti.Port;
+            if (!port_check.Checked) vkljucim_port = null;
+            Obvestila.AppendText(Pripomočki.Zagon(@"-c " + Vrednosti.Programator + " -p " + cip[0] + vkljucim_port + " -q -U flash:w:" + Path.GetFileName(Vrednosti.Datoteka_hex) + ":a"));
+        }
+
+        private void sprememba_porta(object sender, EventArgs e)
+        {
+                Port.Enabled = port_check.Checked;
+        }
 
     }
 }
