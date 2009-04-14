@@ -110,7 +110,7 @@ namespace avrdudegui
         {
             string cip = Vrednosti.Mikrokontroler.Split(' ')[1].ToLower().Remove(0, 2);
             cip = "AT" + cip;
-            string naslov = "http://palmavr.sourceforge.net/cgi-bin/fc.cgi?P_PREV=" + cip + "&P=" + cip + Vrednosti.Spletna_stran + "&O_HEX=Apply+user+values";
+            string naslov = "http://www.engbedded.com/cgi-bin/fcx.cgi?P_PREV=" + cip + "&P=" + cip + Vrednosti.Spletna_stran + "&O_HEX=Apply+user+values";
             System.Diagnostics.Process.Start(naslov);
         }
 

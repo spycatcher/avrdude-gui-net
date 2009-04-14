@@ -135,12 +135,6 @@
   <data name="zap_gumb_eprom.Text" xml:space="preserve">
     <value>Write</value>
   </data>
-  <data name="Varovalke.Text" xml:space="preserve">
-    <value>Fuses</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Fuses</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="povezava_do_kalkulatorja.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 13</value>
@@ -154,11 +148,11 @@
   <data name="zapiši_varovalke.Text" xml:space="preserve">
     <value>Write</value>
   </data>
-  <data name="Nastavitve.Text" xml:space="preserve">
-    <value>Settings</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Fuses</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Programmer</value>
+  <data name="Varovalke.Text" xml:space="preserve">
+    <value>Fuses</value>
   </data>
   <data name="port_check.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 17</value>
@@ -166,8 +160,14 @@
   <data name="port_check.Text" xml:space="preserve">
     <value>Use port?</value>
   </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Programmer</value>
+  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Microcontroler</value>
+  </data>
+  <data name="Nastavitve.Text" xml:space="preserve">
+    <value>Settings</value>
   </data>
   <data name="Vizitka.Text" xml:space="preserve">
     <value>About</value>
