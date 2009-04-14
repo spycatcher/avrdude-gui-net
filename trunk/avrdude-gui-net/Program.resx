@@ -174,8 +174,8 @@
   <data name="FLASH_P.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;efuse_vrstica.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;labelCopyright.Parent" xml:space="preserve">
+    <value>tableLayoutPanel</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -212,9 +212,6 @@
   </data>
   <data name="tableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 49</value>
   </data>
   <data name="tableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -254,6 +251,9 @@
   </data>
   <data name="FLASH.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
+  </data>
+  <data name="labelProductName.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
   <data name="labelCompanyName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 3, 0</value>
@@ -315,8 +315,8 @@
   <data name="&gt;&gt;labelVersion.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="povezava_do_kalkulatorja.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
   <data name="port_check.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -347,6 +347,9 @@
   </data>
   <data name="povezava_do_kalkulatorja.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 13</value>
+  </data>
+  <data name="&gt;&gt;Obvestila.Name" xml:space="preserve">
+    <value>Obvestila</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>65, 19</value>
@@ -550,6 +553,9 @@
   <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="micsel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 21</value>
+  </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
@@ -577,8 +583,8 @@
   <data name="&gt;&gt;EPROM.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="micsel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 21</value>
+  <data name="micsel.Items1" xml:space="preserve">
+    <value>gvjv</value>
   </data>
   <data name="micsel.Items2" xml:space="preserve">
     <value>teswt</value>
@@ -709,8 +715,8 @@
   <data name="Varovalke.Text" xml:space="preserve">
     <value>Varovalke</value>
   </data>
-  <data name="&gt;&gt;Varovalke.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+  <data name="&gt;&gt;efuse_vrstica.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel3.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -754,8 +760,8 @@
   <data name="&gt;&gt;labelCopyright.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lockb_vrstica.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="progsel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 21</value>
   </data>
   <data name="&gt;&gt;Glavno.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -790,8 +796,8 @@
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>groupBox3</value>
   </data>
-  <data name="lfuse_vrstica.MaxLength" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="Obvestila.AccessibleName" xml:space="preserve">
+    <value>Obvestilo</value>
   </data>
   <data name="FLASH.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 23</value>
@@ -802,14 +808,17 @@
   <data name="&gt;&gt;EPROM_P.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="EPROM_P.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
   <data name="labelCopyright.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;povezava_do_kalkulatorja.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="Nastavitve.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="lockb_vrstica.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
   <data name="&gt;&gt;labelCopyright.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -825,9 +834,6 @@
   </data>
   <data name="labelCopyright.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
-  </data>
-  <data name="progsel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 21</value>
   </data>
   <data name="&gt;&gt;labelCompanyName.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -853,6 +859,9 @@
   <data name="Obvestila.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Vertical</value>
   </data>
+  <data name="zapiši_varovalke.Text" xml:space="preserve">
+    <value>Zapiši</value>
+  </data>
   <data name="&gt;&gt;preberi_varovalke.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -867,12 +876,6 @@
   </data>
   <data name="&gt;&gt;micsel.Parent" xml:space="preserve">
     <value>groupBox2</value>
-  </data>
-  <data name="povezava_do_kalkulatorja.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="zap_gumb_eprom.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Varovalke</value>
@@ -906,9 +909,6 @@
   </data>
   <data name="&gt;&gt;hfuse_vrstica.Name" xml:space="preserve">
     <value>hfuse_vrstica</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
   </data>
   <data name="Vizitka.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
@@ -985,8 +985,8 @@
   <data name="zap_gumb_flash.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Flash</value>
+  <data name="lfuse_vrstica.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="Obvestila.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -1000,17 +1000,23 @@
   <data name="efuse_vrstica.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 16</value>
   </data>
-  <data name="zapiši_varovalke.Text" xml:space="preserve">
-    <value>Zapiši</value>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 49</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="micsel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;FLASH_P.Parent" xml:space="preserve">
     <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;port_check.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 70</value>
@@ -1035,6 +1041,9 @@
   </data>
   <data name="&gt;&gt;zap_gumb_eprom.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>Varovalke</value>
   </data>
   <data name="&gt;&gt;Nastavitve.Name" xml:space="preserve">
     <value>Nastavitve</value>
@@ -1105,9 +1114,6 @@
   <data name="textBoxDescription.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="tableLayoutPanel.RowCount" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="&gt;&gt;povezava_do_kalkulatorja.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1149,9 +1155,6 @@
   </data>
   <data name="tableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 131</value>
-  </data>
-  <data name="Obvestila.AccessibleName" xml:space="preserve">
-    <value>Obvestilo</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>lfuse</value>
@@ -1195,11 +1198,17 @@
   <data name="labelCompanyName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Flash</value>
+  </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="Nastavitve.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;zap_gumb_eprom.Parent" xml:space="preserve">
     <value>groupBox5</value>
@@ -1216,8 +1225,8 @@
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;labelCopyright.Parent" xml:space="preserve">
-    <value>tableLayoutPanel</value>
+  <data name="&gt;&gt;Varovalke.Parent" xml:space="preserve">
+    <value>tabControl1</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel3.Name" xml:space="preserve">
     <value>tableLayoutPanel3</value>
@@ -1227,6 +1236,9 @@
   </data>
   <data name="&gt;&gt;shrani.Name" xml:space="preserve">
     <value>shrani</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="zap_gumb_eprom.Location" type="System.Drawing.Point, System.Drawing">
     <value>111, 19</value>
@@ -1267,9 +1279,6 @@
   <data name="&gt;&gt;efuse_vrstica.Name" xml:space="preserve">
     <value>efuse_vrstica</value>
   </data>
-  <data name="Glavno.Text" xml:space="preserve">
-    <value>Flash &amp; Eprom</value>
-  </data>
   <data name="labelCompanyName.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
@@ -1303,9 +1312,6 @@
   <data name="labelVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="micsel.Items1" xml:space="preserve">
-    <value>gvjv</value>
-  </data>
   <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
@@ -1318,8 +1324,8 @@
   <data name="&gt;&gt;Vizitka.Name" xml:space="preserve">
     <value>Vizitka</value>
   </data>
-  <data name="labelProductName.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+  <data name="&gt;&gt;tableLayoutPanel.Name" xml:space="preserve">
+    <value>tableLayoutPanel</value>
   </data>
   <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1345,8 +1351,8 @@
   <data name="&gt;&gt;zapiši_varovalke.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel.Name" xml:space="preserve">
-    <value>tableLayoutPanel</value>
+  <data name="zap_gumb_eprom.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="labelCopyright.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 3, 0</value>
@@ -1363,9 +1369,6 @@
   <data name="&gt;&gt;lfuse_vrstica.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="groupBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
   </data>
@@ -1374,9 +1377,6 @@
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 18</value>
-  </data>
-  <data name="&gt;&gt;Nastavitve.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel3.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1429,14 +1429,11 @@
   <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
     <value>tableLayoutPanel2</value>
   </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="Glavno.Text" xml:space="preserve">
+    <value>Flash &amp; Eprom</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="groupBox5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
   </data>
   <data name="lfuse_vrstica.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1450,26 +1447,29 @@
   <data name="&gt;&gt;labelProductName.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>Varovalke</value>
+  <data name="tableLayoutPanel.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="Nastavitve.Text" xml:space="preserve">
     <value>Nastavitve</value>
   </data>
-  <data name="EPROM_P.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="groupBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="labelCompanyName.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 17</value>
   </data>
-  <data name="&gt;&gt;port_check.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;Nastavitve.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;EPROM.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;port_check.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;zap_gumb_flash.Name" xml:space="preserve">
+    <value>zap_gumb_flash</value>
   </data>
   <data name="&gt;&gt;lockb_vrstica.Name" xml:space="preserve">
     <value>lockb_vrstica</value>
@@ -1480,14 +1480,14 @@
   <data name="&gt;&gt;Vizitka.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;zap_gumb_flash.Name" xml:space="preserve">
-    <value>zap_gumb_flash</value>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
   <data name="&gt;&gt;micsel.Name" xml:space="preserve">
     <value>micsel</value>
   </data>
-  <data name="&gt;&gt;Obvestila.Name" xml:space="preserve">
-    <value>Obvestila</value>
+  <data name="groupBox5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="Nastavitve.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 137</value>
@@ -1498,16 +1498,16 @@
   <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
     <value>tableLayoutPanel3</value>
   </data>
-  <metadata name="izbira.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="shrani.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>95, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="shrani.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>95, 17</value>
+  <metadata name="izbira.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>English</value>
+    <value>Romanian</value>
   </metadata>
 </root>

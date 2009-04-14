@@ -117,7 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="FLASH.Text" xml:space="preserve">
+    <value>Choose file</value>
+  </data>
+  <data name="FLASH_P.Text" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="zap_gumb_flash.Text" xml:space="preserve">
+    <value>Write</value>
+  </data>
+  <data name="EPROM.Text" xml:space="preserve">
+    <value>Choose file</value>
+  </data>
+  <data name="EPROM_P.Text" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="zap_gumb_eprom.Text" xml:space="preserve">
+    <value>Write</value>
+  </data>
+  <data name="Varovalke.Text" xml:space="preserve">
+    <value>Fuses</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Fuses</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="povezava_do_kalkulatorja.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 13</value>
+  </data>
+  <data name="povezava_do_kalkulatorja.Text" xml:space="preserve">
+    <value>Calc for fuses</value>
+  </data>
+  <data name="preberi_varovalke.Text" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="zapiši_varovalke.Text" xml:space="preserve">
+    <value>Write</value>
+  </data>
+  <data name="Nastavitve.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Programmer</value>
+  </data>
+  <data name="port_check.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 17</value>
+  </data>
+  <data name="port_check.Text" xml:space="preserve">
+    <value>Use port?</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Microcontroler</value>
+  </data>
+  <data name="Vizitka.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAMDAAAAEAIACoJQAAFgAAACgAAAAwAAAAYAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
